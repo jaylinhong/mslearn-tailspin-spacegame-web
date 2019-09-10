@@ -34,12 +34,13 @@ steps:
 
 
 
-# - task: DotNetCoreCLI@2
-- script: dotnet restore **/*.csproj
+- task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
-  # inputs:
-  #   command: 'restore'
-  #   projects: '**/*.csproj'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+    versionEnvVar:
+      DOTNET_CLI_HOME: /tmp
 
 - template: templates/build.yml
   parameters:
@@ -52,5 +53,4 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
-
 
