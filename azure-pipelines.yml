@@ -15,7 +15,7 @@ steps:
     version: '$(dotnetSdkVersion)'
 
 - task: Npm@1
-  displayName: 'Run npm install  --unsafe-perm=true --allow-root'
+  displayName: 'Run npm install  --unsafe-perm'
   inputs:
     verbose: false
 
