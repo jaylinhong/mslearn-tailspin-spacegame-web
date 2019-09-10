@@ -34,12 +34,11 @@ steps:
 
 
 
-# - task: DotNetCoreCLI@2
-- script: dotnet restore
+- task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
-  # inputs:
-  #   command: 'restore'
-  #   projects: '**/*.csproj'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
 
 - template: templates/build.yml
   parameters:
