@@ -17,6 +17,8 @@ steps:
 - task: Npm@1
   displayName: 'Run npm install '
   inputs:
+    command: 'custom'
+    customCommand: install --unsafe-perm
     verbose: false
 
 
@@ -49,4 +51,3 @@ steps:
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
 
-  
